@@ -8,25 +8,26 @@ class EG{
 	
 	File arquivo = new File(args[0]); //args[0] pega o nome "main.eg" passdo no terminal
 	Interpretador objInterpretador = new Interpretador(); //cria o objeto que vai ser o arquivo
-	String comandos[] = new String[3000];
+	String comandos[] = new String[3000]; //quantidade de linhas que consegue ler
 
 	try{
 	    Scanner sc = new Scanner(arquivo);
 	    
 	    //guarda cada linha em cada posição
-	    int a = 0;
-	    while(sc.hasNextLine()){
-		comandos[a] = sc.nextLine();
-		a++;
+	    int linha = 0;
+	    while(sc.hasNext()){
+		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
+		comandos[linha].trim(); // remove os espaços do começo e final da linha
+		linha++;
 	    }
 
 	    //se quiser ver o que tem no array "comandos" executa a linha abaixo
 	    //int f = comandos.length;
-	    for(int i = 0; i < 20; i++)
-		System.out.println(comandos[i]);	
+	    for(int i = 0; i < linha; i++)
+		System.out.println(comandos[i]);    
 	    
 	    
-	    objInterpretador.comecaInterpretar(comandos);//começa a interpretar 
+	    objInterpretador.interpreta(comandos, linha);//começa a interpretar 
 	    sc.close(); //termina de ler o arquivo
 	} 
 	catch (FileNotFoundException e){
