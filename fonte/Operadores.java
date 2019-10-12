@@ -11,7 +11,6 @@ class Operacoes{
     public String getDivisao()      {return this.Divisao;}
     public String getMultiplicacao(){return this.Multiplicacao;}
     public String getResto()        {return this.Resto;}
-	
 }
 
 class Logicos{
@@ -31,9 +30,5 @@ class Logicos{
     public String getIgual()     {return this.Igual;}
     public String getDiferente() {return this.Diferente;}
     public String getE()         {return this.E;}
-    public String getOu()        {return this.Ou;}
-    
+    public String getOu()        {return this.Ou;}   
 }
-
-
- 

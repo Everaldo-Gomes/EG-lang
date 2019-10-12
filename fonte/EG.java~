@@ -18,7 +18,7 @@ class InicioArquivo{
     }
 }
 
-class InterpretadorEG{ 
+class EG{ 
     public static void main(String args[]) throws Exception{
         
 	InicioArquivo objInicioArquivo = new InicioArquivo();
@@ -33,7 +33,7 @@ class InterpretadorEG{
 	    sc.close(); //termina de ler o arquivo
 	} 
 	catch (FileNotFoundException e){
-	    System.out.println("Não foi possível executar. Verifique o nome do arquivo.");
+	    System.out.println("Não foi possível executar " + args[0] + "." + " Verifique o nome do arquivo.");
 	}
     }
 }
