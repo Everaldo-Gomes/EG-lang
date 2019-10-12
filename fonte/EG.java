@@ -15,11 +15,12 @@ class EG{
 	    
 	    //guarda cada linha em cada posição
 	    int posicao = 0;
-	    while(sc.hasNextLine()){            
-		comandos[posicao] = sc.nextLine();
-		posicao++;
+	    while(sc.hasNextLine()){
+		//quebra quando tiver um espaço em branco, e pode quebrar em até 3000 entradas.
+		String getLine = sc.nextLine(); //a cada espaço, pega o que foi digitado e inseri no array comandos
+		comandos = getLine.split(" ",3000);
 	    }
-	    objInterpretador.comecaInterpretar(comandos);
+	    objInterpretador.comecaInterpretar(comandos);//começa a interpretar 
 	    sc.close(); //termina de ler o arquivo
 	} 
 	catch (FileNotFoundException e){
