@@ -1,0 +1,20 @@
+class Operacoes{
+
+    public String OperacaoSoma          = "Soma";
+    public String OperacaoSubtracao     = "Subtrai";
+    public String OperacaoDivisao       = "Divide";
+    public String OperacaoMultiplicacao = "Multipilica";
+    public String OperacaoResto         = "Resto";
+}
+
+class Logicos{
+    public String OperacaoMaior         = "MaiorQue";
+    public String OperacaoMaiorIgual    = "MaiorIgual";
+    public String OperacaoMenor         = "MenorQue";
+    public String OperacaoMenorIgual    = "MenorIgual";
+    public String OperacaoIgual         = "Igual";
+    public String OperacaoDiferente     = "Diferente";
+    public String OperacaoE             = "EE";
+    public String OperacaoOu            = "OO";
+}
+ 

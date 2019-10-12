@@ -1,5 +1,5 @@
 # Como compilar
-#### javac InterpretadorEG.java
+#### javac *.java
 
 # Como executar
 #### java InterpretadorEG main.eg
