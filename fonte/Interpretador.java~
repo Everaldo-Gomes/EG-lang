@@ -1,0 +1,15 @@
+class Interpretador{
+     private String comandos[] = new String[10];
+
+    public void setComando(String s){
+	//quebrando as linhas
+	//quebra quando tiver um espaço em branco, e pode quebrar até 10 entradas, AINDA DEFINIR A QUANTIDADE DE COMANDOS QUE VAI TER EM UMA LINHA
+	this.comandos = s.split(" ",10);
+	
+	//se quiser ver o que tem no array "comandos" executa a linha abaixo
+	//int f = comandos.length;
+	//for(int i = 0; i < f; i++)
+	//System.out.println(comandos[i]); 	
+    }
+
+}
