@@ -1,34 +1,41 @@
-class Operacoes{
+class Aritimetico{
 
-    private String Soma          = "Soma";
-    private String Subtracao     = "Subtrai";
-    private String Divisao       = "Divide";
-    private String Multiplicacao = "Multipilica";
-    private String Resto         = "Resto";
+    private String soma          = "Soma";
+    private String subtracao     = "Subtrai";
+    private String divisao       = "Divide";
+    private String multiplicacao = "Multipilica";
+    private String resto         = "Resto";
 
-    public String getSoma()         {return this.Soma;}
-    public String getSubtracao()    {return this.Subtracao;}
-    public String getDivisao()      {return this.Divisao;}
-    public String getMultiplicacao(){return this.Multiplicacao;}
-    public String getResto()        {return this.Resto;}
+    public String getSoma()         {return this.soma;         }
+    public String getSubtracao()    {return this.subtracao;    }
+    public String getDivisao()      {return this.divisao;      }
+    public String getMultiplicacao(){return this.multiplicacao;}
+    public String getResto()        {return this.resto;        }
 }
 
-class Logicos{
-    private String Maior       = "MaiorQue";
-    private String Menor       = "MenorQue";
-    private String MaiorIgual  = "MaiorIgual";
-    private String MenorIgual  = "MenorIgual";
-    private String Igual       = "Igual";
-    private String Diferente   = "Diferente";
-    private String E           = "EE";
-    private String Ou          = "OO";
+class Atribuicao{
 
-    public String getMaior()     {return this.Maior;}
-    public String getMenor()     {return this.Menor;}
-    public String getMaiorIgual(){return this.MaiorIgual;}
-    public String getMenorIgual(){return this.MenorIgual;}
-    public String getIgual()     {return this.Igual;}
-    public String getDiferente() {return this.Diferente;}
-    public String getE()         {return this.E;}
-    public String getOu()        {return this.Ou;}   
+    private String igual = "=";
+    
+    public String getIgual(){return this.igual;}
+}
+
+class Logico{
+    private String maior       = "MaiorQue";
+    private String menor       = "MenorQue";
+    private String maiorIgual  = "MaiorIgual";
+    private String menorIgual  = "MenorIgual";
+    private String igual       = "Igual";
+    private String diferente   = "Diferente";
+    private String e           = "EE";
+    private String ou          = "OO";
+
+    public String getMaior()     {return this.maior;     }
+    public String getMenor()     {return this.menor;     }
+    public String getMaiorIgual(){return this.maiorIgual;}
+    public String getMenorIgual(){return this.menorIgual;}
+    public String getIgual()     {return this.igual;     }
+    public String getDiferente() {return this.diferente; }
+    public String getE()         {return this.e;         }
+    public String getOu()        {return this.ou;        }   
 }
