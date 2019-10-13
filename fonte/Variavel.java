@@ -12,10 +12,16 @@ class Variavel{
 
     public Variavel(){}
     
+    public Variavel(String n){
+	this.nome = n;
+	this.valor = 0.0;
+    }
+    
     public Variavel(String n, double v){
 	this.nome = n;
 	this.valor = v;
     }
+    
     
     public void setNome(String n) {this.nome = n;    }
     public void setValor(double v){this.valor = v;   }

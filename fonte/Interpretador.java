@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-/*DEFININDO AS VARIAVIES E AS OPERAÇÕES. AINDA NÃO ESTÁ PRONTO*/
-
 class Interpretador{
     
     private Variavel[] var = new Variavel[3000];   //usada para guardar as variáveis
+    private Variavel a = new Variavel();
     private Operador operadorObj = new Operador(); //usada para decidir qual operador vai usar
     private int linhaAtual;
     
@@ -13,70 +12,46 @@ class Interpretador{
     public void interpreta(String comandos[], int totalLinha){
 	this.linhaAtual = 1;
 	int posicao = 0; //posicao do vetor de variaveis
-	double v = 0; // valor passado para a variavel criada
-	
-	for(int i = 0; i < totalLinha; i++,this.linhaAtual++,posicao++){
-	    var[posicao] = new Variavel();
 
+	//NÃO TENHO CERTEZA SE ESTÁ DO JEITO CORRETO
+	for(int i = 0; i < totalLinha; i++,this.linhaAtual++){
 	    //cria variáveis
-	    if(comandos[i].equals(var[posicao].getCria())){
+	    if(comandos[i].equals(a.getCria())){
 		String nome  = comandos[i+1];
 		double valor = Double.parseDouble(comandos[i+2]);
-		var[posicao] = new Variavel(nome,valor);
-		var[posicao].setValor(valor);
+		var[posicao] = new Variavel(nome, valor);
+		posicao++;
 	    }
-	    
+
+	    /*
 	    //calcula as operações básicas
 	    else if(comandos[i].equals(operadorObj.getSoma())){
-		//procuraVariavel(var,var[i].getNome());
-		
-		//1º converte a string pra double, depois atribui
-		//v = Double.parseDouble(comandos[posicao+1]) + Double.parseDouble(comandos[posicao+2]);
-		//v = var[posicao].getValor() + var[posicao+1].getValor();
-		//var[posicao].setValor(v);
-		//System.out.println(var[posicao].getValor());
-		//System.out.println(v);
-		/*
-		  PENSANDO EM TRANSFORMAR AS LINHAS A CIMA EM:
-		  var[posicao].setValor(Double.parseDouble(comandos[posicao+1]) + Double.parseDouble(comandos[posicao+2]));
-		  PRA DAÍ NÃO COLOCAR A VARIAVEL double v, MAS NÃO SEI SE VAI FICAR RUIM DE ENTENDER
-		*/
+		double soma = var[posicao].getValor() + var[posicao-1].getValor();
+		System.out.println(soma);
 	    }
 	    else if(comandos[i].equals(operadorObj.getSubtracao())){
-		v = Double.parseDouble(comandos[i+1]) - Double.parseDouble(comandos[i+2]);
-		var[posicao].setValor(v);
-		System.out.println(var[posicao].getValor());
+		double subtracao = var[posicao-1].getValor() - var[posicao-2].getValor();
 	    }
 	    else if(comandos[i].equals(operadorObj.getDivisao())){
-		v = Double.parseDouble(comandos[i+1]) / Double.parseDouble(comandos[i+2]);
-		var[posicao].setValor(v);
-		System.out.println(var[posicao].getValor());
+		double divisao = var[posicao-1].getValor() / var[posicao-2].getValor();
 	    }
 	    else if(comandos[i].equals(operadorObj.getMultiplicacao())){
-		v = Double.parseDouble(comandos[i+1]) * Double.parseDouble(comandos[i+2]);
-		var[posicao].setValor(v);
-		System.out.println(var[posicao].getValor());
+		double multiplicaco = var[posicao-1].getValor() * var[posicao-2].getValor();
 	    }
 	    else if(comandos[i].equals(operadorObj.getResto())){
-		v = Double.parseDouble(comandos[i+1]) % Double.parseDouble(comandos[i+2]);
-		var[posicao].setValor(v);
-		System.out.println(var[posicao].getValor());
+		double resto = var[posicao-1].getValor() % var[posicao-2].getValor();
 	    }
-	    
-	    //System.out.println(linhaAtual);
-	}
-	
-	//System.out.println(var[1].getNome());
-	//System.out.println(var[0].getValor());
-	
-    }
 
-    public Variavel procuraVariavel(Variavel variavelVetor[], String nomeVariavel){
-	int i =0;
-	while(!variavelVetor[i].equals(nomeVariavel)){
-	    i++;
+	    //atribuição
+	    else if(comandos[i].equals(operadorObj.getAtribui())){
+		double atribui = var[posicao-2].getValor();
+		System.out.println(atribui);
+	    } 
+	    */
 	}
-	return variavelVetor[i];	
+	for(int i = 0; i < 3; i++){
+	    System.out.println(var[i].getNome() + " " + var[i].getValor());
+	}
     }
 }
 
