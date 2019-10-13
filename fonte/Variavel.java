@@ -5,9 +5,13 @@
 */
 
 class Variavel{
+
+    private String cria = "Cria";
     private String nome;
     private double valor;
 
+    public Variavel(){}
+    
     public Variavel(String n, double v){
 	this.nome = n;
 	this.valor = v;
@@ -17,4 +21,5 @@ class Variavel{
     public void setValor(double v){this.valor = v;   }
     public String getNome()       {return this.nome; }
     public double getValor()      {return this.valor;}
+    public String getCria()       {return this.cria; }
 }
