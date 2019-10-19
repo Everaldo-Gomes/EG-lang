@@ -3,7 +3,11 @@ import java.util.Scanner;
 class Interpretador{
     
     private Variavel[] var = new Variavel[3000];   //usada para guardar as variáveis
+<<<<<<< HEAD
     private Variavel objVariavel = new Variavel();
+=======
+    private Variavel a = new Variavel(); //não sei se precisa, ou a linha de cima já resolve
+>>>>>>> 7d5b4da9742fb42d11353cd5fd99d14c0f709bd8
     private Operador operadorObj = new Operador(); //usada para decidir qual operador vai usar
     private int linhaAtual;
     
