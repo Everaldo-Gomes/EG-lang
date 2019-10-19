@@ -1,6 +1,6 @@
 import java.util.CharArray;
-import Estado;
-import Primitivo;
+import java.Estado;
+import java.Primitivo;
 
 class Token {
 

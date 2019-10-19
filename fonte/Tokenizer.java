@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 import java.uil.CharArray;
-import MaquinaEstado;
-import Token;
+import java.MaquinaEstado;
+import java.Token;
 
 class Tokenizer {
   private MaquinaEstado estado;
@@ -32,7 +32,7 @@ class Tokenizer {
         continue;
       }
       else if (estado.ehFinal()) {
-        lista[] = reconhecer();
+	  lista[0] = reconhecer(); //foi passado zero apenas para complilar
         this.estado.reset();
       }
       else if (!estado.ehValido())
@@ -50,7 +50,7 @@ class Tokenizer {
   private String popAll() {
     char[] s = {};
     while (!this.pilhaCaracteres.empty())
-      s[] = this.pilhaCaracteres.pop();
-    return new String(s);
+      s[0] = this.pilhaCaracteres.pop(); //foi passado zero apenas para complilar
+    return new String(s); 
   }
 }

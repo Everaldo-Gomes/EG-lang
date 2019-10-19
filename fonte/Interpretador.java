@@ -3,11 +3,7 @@ import java.util.Scanner;
 class Interpretador{
     
     private Variavel[] var = new Variavel[3000];   //usada para guardar as variáveis
-<<<<<<< HEAD
-    private Variavel objVariavel = new Variavel();
-=======
-    private Variavel a = new Variavel(); //não sei se precisa, ou a linha de cima já resolve
->>>>>>> 7d5b4da9742fb42d11353cd5fd99d14c0f709bd8
+
     private Operador operadorObj = new Operador(); //usada para decidir qual operador vai usar
     private int linhaAtual;
     
@@ -19,7 +15,7 @@ class Interpretador{
 
 	for(int i = 0; i < totalLinha; i++,this.linhaAtual++){
 	    //cria variáveis
-	    if(comandos[i].equals(objVariavel.getCria())){
+	    if(comandos[i].equals(var.getCria())){
 		var[posicao] = new Variavel(comandos[i+1]);//,Double.parseDouble(comandos[i+2]));
 		//var[posicao].setNome(comandos[i+1]);
 		//var[posicao].setValor(Double.parseDouble(comandos[i+2]));//setValor recebe o parametro valor que antes é convertido em doulbe

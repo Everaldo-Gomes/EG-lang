@@ -1,12 +1,12 @@
-import Estado;
+import java.Estado;
 
 class MaquinaEstado {
 
-  private Estado[] estado;
-  private final String operadores = "=+-*/";
+    private Estado[] estado;
+    private final String operadores = "=+-*/";
 
   public MaquinaEstado() {
-    this.estado = [Estado.Inicial,Estado.Inicial];
+      this.estado = [Estado.Inicial];
   }
 
   private void shiftEstado(Estado novo) {
@@ -77,7 +77,7 @@ class MaquinaEstado {
   }
 
   public void reset() {
-    this.estado = [Estado.Inicial,Estado.Inicial];
+      this.estado = [stado.Inicial];
   }
 
   public Estado getEstadoFinal() {

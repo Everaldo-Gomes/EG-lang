@@ -1,8 +1,8 @@
 private enum Estado {
-  Inicial
-  Numerico,
-  Alfabetico,
-  Operador,
-  Invalido,
-  Final
+    Inicial,
+    Numerico,
+    Alfabetico,
+    Operador,
+    Invalido,
+    Final
 }
