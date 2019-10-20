@@ -22,12 +22,9 @@ class EG{
 	    }
 
 	    //se quiser ver o que tem no array "comandos" executa a linha abaixo
-	    //int f = comandos.length;
-	    for(int i = 0; i < linha; i++)
-		System.out.println(comandos[i]);    
+	    //for(int i = 0; i < linha; i++) System.out.println(comandos[i]);   
 	    
-	    
-	    objInterpretador.interpreta(comandos, linha);//começa a interpretar 
+	    objInterpretador.interpreta(comandos,linha);//começa a interpretar 
 	    sc.close(); //termina de ler o arquivo
 	} 
 	catch (FileNotFoundException e){
