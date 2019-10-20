@@ -6,7 +6,7 @@
 
 class Variavel{
 
-    private String cria = "Cria";
+    public  static final String cria = "Cria";
     private String nome;
     private double valor;
 
@@ -14,5 +14,13 @@ class Variavel{
     public void setValor(double v){this.valor = v;   }
     public String getNome()       {return this.nome; }
     public double getValor()      {return this.valor;}
-    public String getCria()       {return this.cria; }
+    //public String getCria()       {return this.cria; }  não está sendo mais usada
+
+    public static void atribuiVariavel(Variavel var[], int i, int posicao, String comandos[], int linhaAtual){
+	var[posicao] = new Variavel();
+	var[posicao].setNome(comandos[i+1]);
+	var[posicao].setValor(Double.parseDouble(comandos[i+2]));
+	System.out.println(var[posicao].getNome()); //apagar
+	System.out.println(var[posicao].getValor());//apagar
+    }
 }

@@ -1,27 +1,30 @@
 import java.util.Scanner;
 
 class Interpretador{
+
+    public final int tamanhoVariavel = 3000;
     
-    private Variavel[] var = new Variavel[3000];   //usada para guardar as variáveis
-    private Operador operadorObj = new Operador(); //usada para decidir qual operador vai usar
+    private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
+    private Operador operadorObj = new Operador(); 
     private int linhaAtual;
+    private int posicao;
     
     public int getLinhaAtual(){return this.linhaAtual;}
     
     public void interpreta(String comandos[], int totalLinha){
 	this.linhaAtual = 1;
-	int posicao = 0;
+
 	for(int i = 0; i < totalLinha; i++, this.linhaAtual++){
-	    if(comandos[i].equals("Cria"))// atribuiVariavel(i,posicao,comandos,linhaAtual);
-		;
-	}
-    }
+	    //cria variavel
+	    if(comandos[i].equals(Variavel.cria)){
+		Variavel.atribuiVariavel(var,i,posicao,comandos,linhaAtual);
+		this.posicao++;
+	    }
 
-    public void atribuiVariavel(int i, int posicao, String comandos[], int linhaAtual){
-	;//var[posicao].setNome(comandos[i+1]);
+	    //soma dois valores sem variável
+	    else if(comandos[i].equals(Operador.soma)) operadorObj.setSoma(Double.parseDouble(comandos[i+1]), Double.parseDouble(comandos[i+2]));
+	     
+	    }
     }
-    
-
-    
 }
 

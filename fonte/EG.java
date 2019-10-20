@@ -8,7 +8,7 @@ class EG{
 	
 	File arquivo = new File(args[0]); //args[0] pega o nome "main.eg" passdo no terminal
 	Interpretador objInterpretador = new Interpretador(); //cria o objeto que vai ser o arquivo
-	String comandos[] = new String[3000]; //quantidade de linhas que consegue ler
+	String comandos[] = new String[tamanhoVariavel]; //quantidade de linhas que consegue ler
 
 	try{
 	    Scanner sc = new Scanner(arquivo);
