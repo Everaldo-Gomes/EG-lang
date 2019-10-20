@@ -1,5 +1,26 @@
 class Operador{
+
+    private double soma, subtrai, multiplica, divide, resto, divisaoInteira;
+
+    public void setSoma(double a,double b)      {this.soma       = a + b;}
+    public void setDiminui(double a,double b)   {this.subtrai    = a - b;}
+    public void setMultiplica(double a,double b){this.multiplica = a * b;}
+
+    public void setDivisao(double a,double b){
+	if(b == 0){
+	    System.out.println("Divisao por 0 não existe");
+	}
+	this.divide = ((double) a / b);
+    }
+    public void setResto(double a,double b){this.resto = a % b;}
+    public void setDivisaoInteira(double a,double b){
+	if (b == 0){
+	    System.out.println("Divisao por 0 não existe");
+	}
+	this.divisaoInteira = a / b;
+    }
     
+    /*
     private String soma          = "Soma";
     private String subtracao     = "Subtrai";
     private String divisao       = "Divide";
@@ -33,5 +54,6 @@ class Operador{
     public String getDiferente()    {return this.diferente;    }
     public String getE()            {return this.e;            }
     public String getOu()           {return this.ou;           }   
+    */
 }
  
