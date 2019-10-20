@@ -1,4 +1,4 @@
-class Variavel{
+xclass Variavel{
 
     public  static final String cria = "Cria";
     private String nome;
