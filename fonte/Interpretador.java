@@ -5,11 +5,9 @@ class Interpretador{
     public final int tamanhoVariavel = 3000;
     
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
-    private Operacao operacaoObj = new Operacao(); 
+    private Operacao operacaoObj = new Operacao();//usado para definir as operações 
     private int linhaAtual;
     private int posicao;
-    
-    //public int getLinhaAtual(){return this.linhaAtual;} até agora não está sendo usada 
     
     public void interpreta(String comandos[], int totalLinha){
 	this.linhaAtual = 1;
@@ -31,35 +29,32 @@ class Interpretador{
 		}
 	    }
 
+	    //operações
 	    //soma
 	    else if(comandos[i].equals(Operador.soma)){
-		//verifica se o 1º argumento depois da palavra reservada SOMA é variavel, se for, guarda o valor dela
-		var[posicao] = Variavel.existeVariavel(comandos[i+1],var,posicao);
-		if(var[posicao] != null){
-		    double a = var[posicao].getValor();
-
-		    //verifica se o 2º argumento depois da palavra reservada SOMA é variavel, se for quarda o valor dela e faz a operação 
-		    var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
-		    if(var[posicao] != null){
-			double b = var[posicao].getValor();
-			operacaoObj.setSoma(a,b);
-		    }//se o 2º argumento não é variável, enão é um número, então faz a peração a variável e com esse número
-		    else
-			operacaoObj.setSoma(a,Double.parseDouble(comandos[i+2]));
-		}
-		//se o 1º argumento for um número testa se o 2º argumento é variável ou número
-		else{
-		    var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
-		    if(var[posicao] != null){
-			double b = var[posicao].getValor();
-			operacaoObj.setSoma(Double.parseDouble(comandos[i+1]),b);
-		    }
-		    else
-			operacaoObj.setSoma(Double.parseDouble(comandos[i+1]),Double.parseDouble(comandos[i+2]));
-		
-		}   
+		byte flag = 1;
+		operacaoObj.operacao(var,comandos,posicao,i,flag);
+	    }
+	    //subtração
+	    else if(comandos[i].equals(Operador.subtracao)){
+		byte flag = 2;
+		operacaoObj.operacao(var,comandos,posicao,i,flag);
+	    }
+	    //multiplicação
+	    else if(comandos[i].equals(Operador.multiplicacao)){
+		byte flag = 3;
+		operacaoObj.operacao(var,comandos,posicao,i,flag);
+	    }
+	    //divisão
+	    else if(comandos[i].equals(Operador.divisao)){
+		byte flag = 4;
+		operacaoObj.operacao(var,comandos,posicao,i,flag);
+	    }
+	    //resto
+	    else if(comandos[i].equals(Operador.resto)){
+		byte flag = 5;
+		operacaoObj.operacao(var,comandos,posicao,i,flag);
 	    }
 	}
     }   
 }
-
