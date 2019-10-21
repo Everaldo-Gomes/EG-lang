@@ -13,10 +13,19 @@ class Saida{
 	    //verifica se o valor passado é uma variável
 	    var[posicao] = var[posicao].existeVariavel(comandos[i],var,posicao);
 	    if(var[posicao] != null){
-		//se passar a variável vai exibir seu nome
-		if(comandos[i].equals('\\')){
-		    System.out.print(var[posicao].getNome() + " ");
-		}
+		//FALTA TESTAR ESSA OPÇÃO   
+		//se passar a variável entre aspas duplas vai exibir seu nome 
+		//if(comandos[i].equals("\"" + var[posicacao].getNome() + "\"")){
+		//    System.out.print(var[posicao].getNome() + " ");
+		//}
+		    
+		//FALTA TESTAR ESSA OPÇÃO
+		//  if(comandos[i].equals("\"" + var[posicacao].getNome() + "\"")){
+		  //	String palavra = comandos[i];
+		//	String novaPalavra = palavra.split("\"",2);  
+		  //}
+		    
+		    
 		//se passar apenas a variável vai exibir seu valor
 		else if(comandos[i].equals(var[posicao].getNome())) System.out.print(var[posicao].getValor() + " ");
 		
