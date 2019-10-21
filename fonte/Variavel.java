@@ -13,15 +13,11 @@ class Variavel{
 	var[posicao] = new Variavel();
 	var[posicao].setNome(comandos[i+1]);
 	var[posicao].setValor(Double.parseDouble(comandos[i+2]));
-	System.out.println(var[posicao].getNome()); //apagar
-	System.out.println(var[posicao].getValor());//apagar
     }
 
     public static void substituiValorVariavel(Variavel var[], int i, int posicao, String comandos[]){
 	var[posicao].setNome(comandos[i+1]);
 	var[posicao].setValor(Double.parseDouble(comandos[i+2]));
-	System.out.println(var[posicao].getNome()); //apagar
-	System.out.println(var[posicao].getValor());//apagar
     }
 
     public static Variavel existeVariavel(String nomeVariavel, Variavel var[], int posicao){

@@ -5,13 +5,16 @@ class Interpretador{
     public final int tamanhoVariavel = 3000;
     
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
-    private Operacao operacaoObj = new Operacao();//usado para definir as operações 
+    private Operacao operacaoObj = new Operacao();//usado para definir as operações
+    private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
     private int linhaAtual;
     private int posicao;
+
+    public int getLinhaAtual(){return this.linhaAtual;}
     
     public void interpreta(String comandos[], int totalLinha){
 	this.linhaAtual = 1;
-
+	
 	for(int i = 0; i < totalLinha; i++,this.linhaAtual++){
 
 	    //cria variavel
@@ -54,6 +57,10 @@ class Interpretador{
 	    else if(comandos[i].equals(Operador.resto)){
 		byte flag = 5;
 		operacaoObj.operacao(var,comandos,posicao,i,flag);
+	    }
+	    //saida na tela
+	    else if(comandos[i].equals(Saida.mostraNaTela)){
+		saidaObj.mostra(comandos,var,i,posicao);
 	    }
 	}
     }   
