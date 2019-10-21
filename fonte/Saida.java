@@ -22,7 +22,8 @@ class Saida{
 		//FALTA TESTAR ESSA OPÇÃO
 		//  if(comandos[i].equals("\"" + var[posicacao].getNome() + "\"")){
 		  //	String palavra = comandos[i];
-		//	String novaPalavra = palavra.split("\"",2);  
+		//	String[] novaPalavra = palavra.split("\"",2);  
+		   // 	System.out.print(novaPalavra[1]) + " ");
 		  //}
 		    
 		    
