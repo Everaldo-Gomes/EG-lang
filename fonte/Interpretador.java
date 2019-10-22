@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Interpretador{
 
-    public final int tamanhoVariavel = 3000;
+    public static final int tamanhoVariavel = 3000;
     
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
     private Operacao operacaoObj = new Operacao();//usado para definir as operações
@@ -15,7 +15,7 @@ class Interpretador{
     public void interpreta(String comandos[], int totalLinha){
 	this.linhaAtual = 1;
 	
-	for(int i = 0; i < totalLinha; i++,this.linhaAtual++){
+	for(int i = 0; i < totalLinha; i++){
 
 	    //cria variavel
 	    if(comandos[i].equals(Variavel.cria)){
@@ -26,10 +26,8 @@ class Interpretador{
 		    continue;
 		}
 		//se não, cria uma nova variavel
-		else{
-		    Variavel.atribuiVariavel(var,i,posicao,comandos);
-		    this.posicao++;
-		}
+		Variavel.atribuiVariavel(var,i,posicao,comandos);
+		this.posicao++;
 	    }
 
 	    //operações
@@ -62,6 +60,7 @@ class Interpretador{
 	    else if(comandos[i].equals(Saida.mostraNaTela)){
 		saidaObj.mostra(comandos,var,i,posicao);
 	    }
+	    
 	}
     }   
 }

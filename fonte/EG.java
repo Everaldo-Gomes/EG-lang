@@ -8,7 +8,7 @@ class EG{
 	
 	File arquivo = new File(args[0]); //args[0] pega o nome "main.eg" passdo no terminal
 	Interpretador objInterpretador = new Interpretador(); //cria o objeto que vai ser o arquivo
-	String comandos[] = new String[tamanhoVariavel]; //quantidade de linhas que consegue ler
+	String comandos[] = new String[Interpretador.tamanhoVariavel]; //quantidade de linhas que consegue ler
 
 	try{
 	    Scanner sc = new Scanner(arquivo);
@@ -17,7 +17,7 @@ class EG{
 	    int linha = 0;
 	    while(sc.hasNext()){
 		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
-		comandos[linha].trim(); // remove os espaços do começo e final da linha
+		//comandos[linha].trim(); // remove os espaços do começo e final da linha
 		linha++;
 	    }
 
