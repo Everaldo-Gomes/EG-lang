@@ -2,7 +2,7 @@ class Operacao{
 
     private double soma, subtrai, multiplica, divide, resto, divisaoInteira;
 
-    public void setSoma(double a,double b)      {this.soma       = a + b;}
+    public double setSoma(double a,double b)      {this.soma       = a + b; return this.soma;}
     public void setDiminui(double a,double b)   {this.subtrai    = a - b;}
     public void setMultiplica(double a,double b){this.multiplica = a * b;}
 

@@ -5,7 +5,7 @@ class Interpretador{
     public static final int tamanhoVariavel = 3000;
     
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
-    private Operacao operacaoObj = new Operacao();//usado para definir as operações
+    public Operacao operacaoObj = new Operacao();//usado para definir as operações
     private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
     private int linhaAtual;
     private int posicao;
