@@ -26,8 +26,14 @@ class Interpretador{
 		    continue;
 		}
 		//se não, cria uma nova variavel
-		Variavel.atribuiVariavel(var,i,posicao,comandos);
+		Variavel.criaVariavel(var,i,posicao,comandos);
 		this.posicao++;
+	    }
+
+	    //atribui um valor a uma variável
+	    else if(comandos[i].equals(Operador.atribui)){
+		int variavelNaoDeclarada = Variavel.atribuiVariavel(var,i,posicao,comandos);
+		if(variavelNaoDeclarada == -1) break;
 	    }
 
 	    //operações
@@ -59,8 +65,7 @@ class Interpretador{
 	    //saida na tela
 	    else if(comandos[i].equals(Saida.mostraNaTela)){
 		saidaObj.mostra(comandos,var,i,posicao);
-	    }
-	    
+	    }   
 	}
     }   
 }

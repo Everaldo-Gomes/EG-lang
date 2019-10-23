@@ -36,7 +36,7 @@ class Operacao{
 		else if(flag == 5)
 		    setResto(a,b);
 	    }
-	    //se o 2º argumento não é variável, enão é um número, então faz a peração a variável e com esse número
+	    //se o 2º argumento não é variável, enão é um número, então faz a operação da variável e com esse número
 	    else{
 		if(flag == 1)
 		    setSoma(a,Double.parseDouble(comandos[i+2]));
@@ -80,35 +80,3 @@ class Operacao{
 	}
     }
 }
-
-
- /*
- //ISSO NÃO VAI FICAR AQUI, MAS POR SEGUNÇA ESTÁ...
-
-    public void soma(Variavel var[],String comandos[],int posicao, int i){
-	//verifica se o 1º argumento depois da palavra reservada é variavel, se for, guarda o valor dela
-	var[posicao] = Variavel.existeVariavel(comandos[i+1],var,posicao);
-	if(var[posicao] != null){
-	    double a = var[posicao].getValor();
-
-	    //verifica se o 2º argumento depois da palavra reservada é variavel, se for quarda o valor dela e faz a operação 
-	    var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
-	    if(var[posicao] != null){
-		double b = var[posicao].getValor();
-		setSoma(a,b);
-	    }//se o 2º argumento não é variável, enão é um número, então faz a peração a variável e com esse número
-	    else
-		setSoma(a,Double.parseDouble(comandos[i+2]));
-	}
-	//se o 1º argumento for um número testa se o 2º argumento é variável ou número
-	else{
-	    var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
-	    if(var[posicao] != null){
-		double b = var[posicao].getValor();
-		setSoma(Double.parseDouble(comandos[i+1]),b);
-	    }
-	    else
-		setSoma(Double.parseDouble(comandos[i+1]),Double.parseDouble(comandos[i+2]));
-	}
-    }
- */

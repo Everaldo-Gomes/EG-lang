@@ -27,7 +27,7 @@ class EG{
 	    objInterpretador.interpreta(comandos,linha);//começa a interpretar 
 	    sc.close(); //termina de ler o arquivo
 	} 
-	catch (FileNotFoundException e){
+	catch(FileNotFoundException e){
 	    System.out.println("Não foi possível executar " + args[0] + "." + " Verifique o nome do arquivo.");
 	}
 	
