@@ -51,7 +51,7 @@ Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova 
 
 # Imprimindo na tela
 <p>
-Para mostrar na tela alugma informação, você deve usar os operadores de impressão <strong> M >> << M </strong>. Qualquer outra informação que deseja imprimir na tela e não estiver entre esses operadores seram ignorados. Dentro desses operadores você vai precisar usar mais três operadores, são eles:</br>
+Para mostrar na tela alugma informação, você deve usar os operadores de impressão <strong> M >> << M </strong>. Qualquer outra informação que deseja imprimir na tela e não estiver entre esses operadores será ignorada. Dentro desses operadores você vai precisar usar mais três operadores, são eles:</br>
  
 Quebra de linha: <strong> <<n </strong></br>
 Mostrar nome da variável: <strong> <<nome </strong></br>
