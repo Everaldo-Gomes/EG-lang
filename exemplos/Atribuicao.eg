@@ -1,0 +1,15 @@
+Cria a 1
+Cria b 2
+Cria c 3
+
+Atribui a Multiplica b c
+M>> <<n Variavel a <<nome vale a <<valor <<n <<M
+
+Atribui a Soma 1 c
+M>> <<n Variavel a <<nome vale a <<valor <<n <<M
+
+Atribui a Subtrai b 1
+M>> <<n Variavel a <<nome vale a <<valor <<n <<M
+
+Atribui a Divide 1 1
+M>> <<n Variavel a <<nome vale a <<valor <<n <<M

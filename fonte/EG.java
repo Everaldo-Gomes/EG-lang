@@ -17,19 +17,13 @@ class EG{
 	    int linha = 0;
 	    while(sc.hasNext()){
 		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
-		//comandos[linha].trim(); // remove os espaços do começo e final da linha
 		linha++;
-	    }
-
-	    //se quiser ver o que tem no array "comandos" executa a linha abaixo
-	    //for(int i = 0; i < linha; i++) System.out.println(comandos[i]);   
-	    
+	    }   
 	    objInterpretador.interpreta(comandos,linha);//começa a interpretar 
 	    sc.close(); //termina de ler o arquivo
 	} 
 	catch(FileNotFoundException e){
 	    System.out.println("Não foi possível executar " + args[0] + "." + " Verifique o nome do arquivo.");
 	}
-	
     }
 }
