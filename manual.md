@@ -6,12 +6,16 @@
 
 </br></br>
 # Como usar a linguagem EG 
-<p>Na linguagem EG, diferentimente de muitas outras não é preciso colocar o ";" ao final de cada comando.</p>
+<p>
+Na linguagem EG, diferentimente de muitas outras não é preciso colocar o ";" ao final de cada comando.</br>
+A extensão de cada arquivo deve ser .eg. </br><strong>Ex: arquivo.eg</strong>
+</p>
 
 # Variáveis
 <p>
 Antes de começar a fazer qualquer operação, você deve criar uma variavel e atribuir um valor inicial, não importa onde você declara, mas assim como outras linguagens você tem que declara-lá antes de usar. O exemplo abaixo mostra como criar uma variável de nome var e que recebe o valor 10.</br>
-<strong> EX:</br> Cria var 10 </strong>
+<strong> EX:</br> Cria var 10 </strong></br></br>
+<strong>Importante</strong>, se uma nova variável for declarada com o mesmo nome de uma variável já existente, a variável antiga vai perder o valor.
 </p>
 
 # Operações
@@ -28,4 +32,19 @@ Multiplica 1 var2 </br>
 Divide var1 var2  </br>
 Resto  var1 10    </br>
 </strong>
+</p>
+
+# Atribuição
+<p>
+Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova atribuição. Usando a palavra reservada <strong>Atribui</strong>, Você pode fazer essa alteração de maneiras diferentes, apenas passando o novo valor ou passsando algumas das operações aritiméticas citadas no tópico a cima. Veja o exemplo a seguir. </br>
+ <strong>
+  Ex: </br>
+  Cria a 10 </br>
+  Cria b 20 </br>
+  Cria c 40 </br>
+  
+  Atribui a 50 </strong> //atribui um novo valor para a variável a. </br>
+  
+  <strong>Atribui b Soma 10 30 </strong> //atribui à variável b o resultado da soma 10 + 30. </br></br>
+  <strong>Importante</strong> Não é permitido fazer atribuições do tipo <strong>Atribui c Soma a b</strong>, pois logo após o nome da operação deve-se passar números.
 </p>
