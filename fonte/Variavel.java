@@ -142,8 +142,9 @@ class Variavel{
 
 		//verifica se o 3ºargumento que vai ser passado é uma variável  ou se é o próprio valor
 		var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
-		if(var[posicao] != null)
+		if(var[posicao] != null){
 		    var[posicaoVar1].setValor(var[posicao].getValor());
+		}
 		else{
 		    var[posicaoVar1].setValor(Double.parseDouble(comandos[i+2]));
 		}

@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-class EG{ 
+class EG{  
     public static void main(String args[]) throws Exception{
 	
 	File arquivo = new File(args[0]); //args[0] pega o nome "main.eg" passdo no terminal
@@ -12,17 +12,19 @@ class EG{
 
 	try{
 	    Scanner sc = new Scanner(arquivo);
-	    
-	    //guarda cada linha em cada posição
+
+	    //guarda cada palavra em uma posição
 	    int linha = 0;
+
 	    while(sc.hasNext()){
 		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
 		linha++;
-	    }   
-	    objInterpretador.interpreta(comandos,linha);//começa a interpretar 
-	    sc.close(); //termina de ler o arquivo
+	    }
+	    
+	    objInterpretador.interpreta(comandos,linha); //começa a interpretar 
+	    sc.close(); //fecha o arquivo
 	} 
-	catch(FileNotFoundException e){
+	catch(FileNotFoundException e){ //se o nome do arquivo não fo digitado corretamente
 	    System.out.println("Não foi possível executar " + args[0] + "." + " Verifique o nome do arquivo.");
 	}
     }

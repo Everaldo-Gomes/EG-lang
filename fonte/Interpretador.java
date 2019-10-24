@@ -2,21 +2,20 @@ import java.util.Scanner;
 
 class Interpretador{
 
-    public static final int tamanhoVariavel = 3000;
+    public static final int tamanhoVariavel = 5000;
     
-    private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
     public Operacao operacaoObj = new Operacao();//usado para definir as operações
+    private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
     private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
     private int linhaAtual;
     private int posicao;
-
+    
     public int getLinhaAtual(){return this.linhaAtual;}
     
     public void interpreta(String comandos[], int totalLinha){
-	this.linhaAtual = 1;
 	
 	for(int i = 0; i < totalLinha; i++){
-
+	    
 	    //cria variavel
 	    if(comandos[i].equals(Variavel.cria)){
 		//verifica se a variavel já existe, se sim, substitui o valor
@@ -65,7 +64,7 @@ class Interpretador{
 	    //saida na tela
 	    else if(comandos[i].equals(Saida.mostraNaTela)){
 		saidaObj.mostra(comandos,var,i,posicao);
-	    }   
+	    }
 	}
-    }   
+    }
 }
