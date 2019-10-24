@@ -160,6 +160,11 @@ class Variavel{
 	return 0;
     }
 
+    public static void substituiValorVariavel(Variavel var[], int i, int posicao, String comandos[]){
+	var[posicao].setNome(comandos[i+1]);
+	var[posicao].setValor(Double.parseDouble(comandos[i+2]));
+    }
+
     public static Variavel existeVariavel(String nomeVariavel, Variavel var[], int posicao){
 	for(int i = 0; i < posicao; i++)
 	    if(var[i].getNome().equals(nomeVariavel)) return var[i];	           
