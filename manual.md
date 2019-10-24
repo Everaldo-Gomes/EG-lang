@@ -39,7 +39,7 @@ Resto  var1 10    </br>
 </strong>
 </p>
 
-# Atribuição
+# Atribuições
 <p>
 Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova atribuição. Usando a palavra reservada <strong>Atribui</strong>, Você pode fazer essas alterações de diferentes maneiras, passando o novo valor ou passsando algumas das operações aritiméticas citadas no tópico a cima ultilizando apenas números ou outras variáveis. Veja o exemplo a seguir. </br>
  <strong>
@@ -87,4 +87,3 @@ M>> O valor <<n de b <<nome <<n é: b <<valor <<n <<M </br>
  é 20
 </strong>
 </p>
->>>>>>> 304bc3e0185c4b55e6d92af5067f70d28171463e
