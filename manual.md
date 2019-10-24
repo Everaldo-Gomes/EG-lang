@@ -46,10 +46,10 @@ Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova 
   Atribui a 50 </strong> //atribui um novo valor para a variável a. </br>
   <strong>Atribui b Soma 10 30 </strong> //atribui à variável b o resultado da soma 10 + 30. </br>
   <strong>Atribui a Soma b c</strong> //atribui à variável a o resultado da soma entre os valores das variáveis b e c</br>
-  <strong>Atribui a Subrai b 1</strong> //atribui à variável a o resultado da subtração entre o valor da variável b e o número 1</br> </br>
+  <strong>Atribui a Subrai b 1</strong> //atribui à variável a o resultado da subtração entre o valor da variável b e o número 1</br>
   <strong>Atribui a Multiplica 2 c</strong>//atribui à variável a o resultado da multiplicação entre o número 2 valor da variável c</br>
   <strong>Atribui a Divide 1 1</strong> //atribui à variável a o resultado da divisão  1 e 1</br>
-  <strong>Atribui a Divide 1 1</strong> //atribui à variável a o resultado da divisão  1 e 1</br>
+  <strong>Atribui a Resto 1 1</strong> //atribui à variável a o resultado do resto 1 e 1</br>
   
   
 </p>
