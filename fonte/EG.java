@@ -17,7 +17,6 @@ class EG{
 	    int linha = 0;
 	    while(sc.hasNext()){
 		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
-		//comandos[linha].trim(); // remove os espaços do começo e final da linha
 		linha++;
 	    }   
 	    objInterpretador.interpreta(comandos,linha);//começa a interpretar 
