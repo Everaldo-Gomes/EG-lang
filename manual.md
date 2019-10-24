@@ -48,3 +48,32 @@ Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova 
   <strong>Atribui b Soma 10 30 </strong> //atribui à variável b o resultado da soma 10 + 30. </br></br>
   <strong>Importante</strong> Não é permitido fazer atribuições do tipo <strong>Atribui c Soma a b</strong>, pois logo após o nome da operação deve-se passar números.
 </p>
+
+# Imprimindo na tela
+<p>
+Para mostrar na tela alugma informação, você deve usar os operadores de impressão <strong> M >> << M </strong>. Qualquer outra informação que deseja imprimir na tela e não estiver entre esses operadores seram ignorados. Dentro desses operadores você vai precisar usar mais três operadores, são eles:</br>
+ 
+Quebra de linha: <strong> <<n </strong></br>
+Mostrar nome da variável: <strong> <<nome </strong></br>
+Mostrar valor da variável: <strong> <<valor </strong></br>
+
+<strong>Ex:</br></strong>
+
+//começo do arquivo</br>
+<strong>
+Cria a 10</br>
+Cria b 20</br>
+
+M>> O valor de a <<nome é a <<valor <<n <<M </br>
+M>> O valor <<n de b <<nome <<n é: b <<valor <<n <<M </br>
+</strong>
+//fim do arquivo </br>
+
+<strong>
+ Saída do programa: </br>
+ O valor de a é 10 </br>
+ O valor </br>
+ de b </br>
+ é 20
+</strong>
+</p>
