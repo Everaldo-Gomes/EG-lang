@@ -36,7 +36,7 @@ Resto  var1 10    </br>
 
 # Atribuição
 <p>
-Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova atribuição. Usando a palavra reservada <strong>Atribui</strong>, Você pode fazer essa alteração de maneiras diferentes, passando o novo valor ou passsando algumas das operações aritiméticas citadas no tópico a cima. Veja o exemplo a seguir. </br>
+Depois que uma variável é criada, você pode mudar seu valor fazendo uma nova atribuição. Usando a palavra reservada <strong>Atribui</strong>, Você pode fazer essas alterações de diferentes maneiras, passando o novo valor ou passsando algumas das operações aritiméticas citadas no tópico a cima ultilizando apenas números ou outras variáveis. Veja o exemplo a seguir. </br>
  <strong>
   Ex: </br>
   Cria a 10 </br>
