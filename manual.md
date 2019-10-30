@@ -20,7 +20,7 @@ A extensão de cada arquivo deve ser .eg. </br><strong>Ex: arquivo.eg</strong>
 <p>
 Antes de começar a fazer qualquer operação, você deve criar uma variavel e atribuir um valor inicial, não importa onde você declara, mas assim como outras linguagens você tem que declara-lá antes de usar. O exemplo abaixo mostra como criar uma variável de nome var e que recebe o valor 10.</br>
 <strong> EX:</br> Cria var 10 </strong></br></br>
-<strong>Importante</strong>, se uma nova variável for declarada com o mesmo nome de uma variável já existente, a variável antiga vai perder o valor.
+<strong>Importante</strong>, se uma nova variável for declarada com o mesmo nome de uma variável já existente, a variável antiga vai substituida.
 </p>
 
 # Operações
