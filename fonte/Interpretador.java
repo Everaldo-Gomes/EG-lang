@@ -4,14 +4,10 @@ class Interpretador{
 
     public static final int tamanhoVariavel = 5000;
     
-    public Operacao operacaoObj = new Operacao();//usado para definir as operações
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
-    private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
     protected static int linhaAtual = 1; //conta as linhas
-    //protected static String linha[] = new String[tamanhoVariavel];
-    private int posicao;
-    
-    //public int getLinhaAtual(){return this.linhaAtual;}
+    private int posicao;//posicao de cada comando
+    Operacao operacaoObj = new Operacao(); //usada para escolher a operação
     
     public void interpreta(String comandos[], int totalLinha){
 	
@@ -62,8 +58,15 @@ class Interpretador{
 		byte flag = 5;
 		operacaoObj.operacao(var,comandos,posicao,i,flag);
 	    }
+	    //laço
+	    else if(comandos[i].equals(Laco.comecaRepetir)){
+		Laco lacoObj = new Laco();
+		int error = lacoObj.laco(linhaAtual,var,comandos,i,posicao,totalLinha);
+		if(error == -1) break;
+	    }
 	    //saida na tela
 	    else if(comandos[i].equals(Saida.mostraNaTela)){
+		Saida saidaObj = new Saida();
 		saidaObj.mostra(comandos,var,i,posicao,linhaAtual);
 	    }
 	}	
