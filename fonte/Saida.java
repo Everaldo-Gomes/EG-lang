@@ -5,10 +5,12 @@ class Saida{
     private String exibeNomeVariavel = "<<nome";
     private String exibeValorVariavel = "<<valor";
     
-    public void mostra(String comandos[], Variavel var[], int i, int posicao){
-
-	if(comandos[i].equals(mostraNaTela)) 		Interpretador.linhaAtual++;
+    public int mostra(String comandos[], Variavel var[], int i, int posicao, int linhaAtual){
+	
+	Interpretador.linhaAtual++;
+	
 	i += 1; // se começar de 0 vai mostrar a palavra reservada (M>>)
+	
 	while(!comandos[i].equals(terminaMostraNaTela)){
 
 	    //verifica se o valor passado é uma variável
@@ -30,7 +32,7 @@ class Saida{
 	    
 	    //avisa se não passar a variável quando for exibir o nome e/ou o valor
 	    else if(comandos[i].equals(exibeNomeVariavel) || comandos[i].equals(exibeValorVariavel)) {
-		System.out.println("\nError de sintax.");
+		System.out.println("\nErro: linha " + linhaAtual + ". É esperado uma variável antes de \"<<nome\" ou \"<<valor\"");
 		break;
 	    }
 	    
@@ -40,6 +42,8 @@ class Saida{
 	    else
 		System.out.print(comandos[i] + " "); //mostra o conteudo e dá um espaço
 	    i++;
-	}
-    }
-}   
+	}	    
+	return 0;
+    }	
+}
+

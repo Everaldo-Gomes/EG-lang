@@ -7,7 +7,7 @@ class Interpretador{
     public Operacao operacaoObj = new Operacao();//usado para definir as operações
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
     private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
-    protected static int linhaAtual;
+    protected static int linhaAtual = 1; //conta as linhas
     //protected static String linha[] = new String[tamanhoVariavel];
     private int posicao;
     
@@ -32,7 +32,7 @@ class Interpretador{
 
 	    //atribui um valor a uma variável
 	    else if(comandos[i].equals(Operador.atribui)){
-		int variavelNaoDeclarada = Variavel.atribuiVariavel(var,i,posicao,comandos);
+		int variavelNaoDeclarada = Variavel.atribuiVariavel(var,i,posicao,comandos,linhaAtual);
 		if(variavelNaoDeclarada == -1) break;
 	    }
 
@@ -64,9 +64,8 @@ class Interpretador{
 	    }
 	    //saida na tela
 	    else if(comandos[i].equals(Saida.mostraNaTela)){
-		saidaObj.mostra(comandos,var,i,posicao);
+		saidaObj.mostra(comandos,var,i,posicao,linhaAtual);
 	    }
-	}
-	System.out.println(linhaAtual);
+	}	
     }
 }

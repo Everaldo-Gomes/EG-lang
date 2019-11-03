@@ -11,17 +11,22 @@ class EG{
 	String comandos[] = new String[Interpretador.tamanhoVariavel]; //quantidade de linhas que consegue ler
 
 	try{
-	    //conta as linhas do arquivo
-	    Scanner contaLinha = new Scanner(arquivo);
+	    
+	    Scanner contaLinha = new Scanner(arquivo);/*
 	    while​ (contaLinha.hasNextLine()) {
 		String line = contaLinha.nextLine(); 
-		if(line.equals("")) Interpretador.linhaAtual++;
+		if(line.equals(""))Interpretador.linhaAtual++;
 	    }
+	    */
 	    
 	    //guarda cada palavra em uma posição
 	    int linha = 0;
 	    Scanner sc = new Scanner(arquivo);
 	    while(sc.hasNext()){
+		if(contaLinha.hasNextLine()){ 	    //conta as linhas do arquivo
+		    String line = contaLinha.nextLine();
+		    if(line.equals(""))Interpretador.linhaAtual++;
+		}
 		comandos[linha] = sc.next(); //adiciona uma palavra no vetor
 		linha++;
 	    }

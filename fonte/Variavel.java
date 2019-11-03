@@ -16,7 +16,7 @@ class Variavel{
 	Interpretador.linhaAtual++;
     }
    
-    private static int atribuicaoOperacao(Variavel var[], int i, int posicao, int po, String comandos[], byte flag){
+    private static int atribuicaoOperacao(Variavel var[], int i, int posicao, int po, String comandos[], byte flag, int linhaAtual){
 	posicao += 1;
 	var[posicao] = Variavel.existeVariavel(comandos[i+3],var,posicao);
 	if(var[posicao] != null){ //se o 1º argumento for variável
@@ -28,7 +28,7 @@ class Variavel{
 	    if(var[posicao] != null){
 		if(flag == 1){
 		    var[po].setValor(var[po1].getValor() + var[posicao].getValor());
-		    Interpretador.linhaAtual++;
+		    Interpretador.linhaAtual++; 
 		}
 		else if(flag == 2){
 		    var[po].setValor(var[po1].getValor() - var[posicao].getValor());
@@ -47,7 +47,7 @@ class Variavel{
 		    Interpretador.linhaAtual++;
 		}
 		return 0;
-	    }
+	    }	    
 	    else{
 		if(flag == 1){
 		    var[po].setValor(var[po1].getValor() + Double.parseDouble(comandos[i+4]));
@@ -72,7 +72,6 @@ class Variavel{
 		return 0;
 	    }
 	}
-    
 	//se o 1º argumento não for variável
 	else{
 	    var[posicao] = Variavel.existeVariavel(comandos[i+4],var,posicao);
@@ -127,7 +126,7 @@ class Variavel{
 	}
     }
    
-    public static int atribuiVariavel(Variavel var[], int i, int posicao, String comandos[]){
+    public static int atribuiVariavel(Variavel var[], int i, int posicao, String comandos[], int linhaAtual){
 	//verifica se o 2º argumento a receber um valor é uma variável
 	var[posicao] = Variavel.existeVariavel(comandos[i+1],var,posicao);
 	if(var[posicao] != null){
@@ -136,31 +135,31 @@ class Variavel{
 	    //faz uma operacao antes de atribuir o valor
 	    if(comandos[i+2].equals(Operador.soma)){
 		byte flag = 1;
-		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		atribuicaoOperacao(var,i,posicao,po,comandos,flag,linhaAtual);
 		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.subtracao)){
 		byte flag = 2;
-		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		atribuicaoOperacao(var,i,posicao,po,comandos,flag,linhaAtual);
 		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.multiplicacao)){
 		byte flag = 3;
-		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		atribuicaoOperacao(var,i,posicao,po,comandos,flag,linhaAtual);
 		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.divisao)){
 		byte flag = 4;
-		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		atribuicaoOperacao(var,i,posicao,po,comandos,flag,linhaAtual);
 		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.resto)){
 		byte flag = 5;
-		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		atribuicaoOperacao(var,i,posicao,po,comandos,flag,linhaAtual);
 		Interpretador.linhaAtual++;
 		return 0;
 	    }
@@ -202,12 +201,12 @@ class Variavel{
 		}
 	    }
 	    catch(Exception e){
-		System.out.println("Variável \"" + comandos[i+2] + "\" não foi delcarada");
+		System.out.println("Error: linha " + linhaAtual + ". Variável \"" + comandos[i+2] + "\" não foi delcarada");
 		return -1;
 	    } 
 	}
 	else{
-	    System.out.println("Sintax error. É esperado uma variável ou um valor no 2º argumento");
+	    System.out.println("Error: linha " + linhaAtual + ". Sintax error. É esperado uma variável declarada após \"Atribrui\"");
 	    return -1;
 	}
 	return 0;
