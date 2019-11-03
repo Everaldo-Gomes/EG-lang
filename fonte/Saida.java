@@ -5,7 +5,9 @@ class Saida{
     private String exibeNomeVariavel = "<<nome";
     private String exibeValorVariavel = "<<valor";
     
-    public void mostra(String comandos[], Variavel var[],int i, int posicao){
+    public void mostra(String comandos[], Variavel var[], int i, int posicao){
+
+	if(comandos[i].equals(mostraNaTela)) 		Interpretador.linhaAtual++;
 	i += 1; // se começar de 0 vai mostrar a palavra reservada (M>>)
 	while(!comandos[i].equals(terminaMostraNaTela)){
 

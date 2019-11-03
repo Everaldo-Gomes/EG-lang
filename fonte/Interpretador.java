@@ -7,10 +7,11 @@ class Interpretador{
     public Operacao operacaoObj = new Operacao();//usado para definir as operações
     private Variavel[] var = new Variavel[tamanhoVariavel];//usada para guardar as variáveis
     private Saida saidaObj = new Saida(); //usada para mostra as mensagem na tela
-    private int linhaAtual;
+    protected static int linhaAtual;
+    //protected static String linha[] = new String[tamanhoVariavel];
     private int posicao;
     
-    public int getLinhaAtual(){return this.linhaAtual;}
+    //public int getLinhaAtual(){return this.linhaAtual;}
     
     public void interpreta(String comandos[], int totalLinha){
 	
@@ -66,5 +67,6 @@ class Interpretador{
 		saidaObj.mostra(comandos,var,i,posicao);
 	    }
 	}
+	System.out.println(linhaAtual);
     }
 }

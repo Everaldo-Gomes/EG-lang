@@ -13,6 +13,7 @@ class Variavel{
 	var[posicao] = new Variavel();
 	var[posicao].setNome(comandos[i+1]);
 	var[posicao].setValor(Double.parseDouble(comandos[i+2]));
+	Interpretador.linhaAtual++;
     }
    
     private static int atribuicaoOperacao(Variavel var[], int i, int posicao, int po, String comandos[], byte flag){
@@ -25,29 +26,49 @@ class Variavel{
 	    //verifica se o 2º argumento é variável
 	    var[posicao] = Variavel.existeVariavel(comandos[i+4],var,posicao);
 	    if(var[posicao] != null){
-		if(flag == 1)
+		if(flag == 1){
 		    var[po].setValor(var[po1].getValor() + var[posicao].getValor());
-		else if(flag == 2)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 2){
 		    var[po].setValor(var[po1].getValor() - var[posicao].getValor());
-		else if(flag == 3)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 3){
 		    var[po].setValor(var[po1].getValor() * var[posicao].getValor());
-		else if(flag == 4)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 4){
 		    var[po].setValor(var[po1].getValor() / var[posicao].getValor());
-		else if(flag == 5)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 5){
 		    var[po].setValor(var[po1].getValor() % var[posicao].getValor());
+		    Interpretador.linhaAtual++;
+		}
 		return 0;
 	    }
 	    else{
-		if(flag == 1)
+		if(flag == 1){
 		    var[po].setValor(var[po1].getValor() + Double.parseDouble(comandos[i+4]));
-		else if(flag == 2)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 2){
 		    var[po].setValor(var[po1].getValor() - Double.parseDouble(comandos[i+4]));
-		else if(flag == 3)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 3){
 		    var[po].setValor(var[po1].getValor() * Double.parseDouble(comandos[i+4]));
-		else if(flag == 4)
+		    Interpretador.linhaAtual++;
+		    }
+		else if(flag == 4){
 		    var[po].setValor(var[po1].getValor() / Double.parseDouble(comandos[i+4]));
-		else if(flag == 5)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 5){
 		    var[po].setValor(var[po1].getValor() % Double.parseDouble(comandos[i+4]));
+		    Interpretador.linhaAtual++;
+		}
 		return 0;
 	    }
 	}
@@ -57,30 +78,50 @@ class Variavel{
 	    var[posicao] = Variavel.existeVariavel(comandos[i+4],var,posicao);
 	    //se o 2º argumento for variável
 	    if(var[posicao] != null){
-		if(flag == 1)
+		if(flag == 1){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) + var[posicao].getValor());
-		else if(flag == 2)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 2){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) - var[posicao].getValor());
-		else if(flag == 3)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 3){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) * var[posicao].getValor());
-		else if(flag == 4)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 4){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) / var[posicao].getValor());
-		else if(flag == 5)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 5){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) % var[posicao].getValor());
+		    Interpretador.linhaAtual++;
+		}
 		return 0;
 	    }
 	    //então todos são valores
 	    else{
-		if(flag == 1)
+		if(flag == 1){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) + Double.parseDouble(comandos[i+4]));
-		else if(flag == 2)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 2){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) - Double.parseDouble(comandos[i+4]));
-		else if(flag == 3)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 3){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) * Double.parseDouble(comandos[i+4]));
-		else if(flag == 4)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 4){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) / Double.parseDouble(comandos[i+4]));
-		else if(flag == 5)
+		    Interpretador.linhaAtual++;
+		}
+		else if(flag == 5){
 		    var[po].setValor(Double.parseDouble(comandos[i+3]) % Double.parseDouble(comandos[i+4]));
+		    Interpretador.linhaAtual++;
+		}
 		return 0;
 	    }
 	}
@@ -96,42 +137,51 @@ class Variavel{
 	    if(comandos[i+2].equals(Operador.soma)){
 		byte flag = 1;
 		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.subtracao)){
 		byte flag = 2;
 		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.multiplicacao)){
 		byte flag = 3;
 		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.divisao)){
 		byte flag = 4;
 		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.resto)){
 		byte flag = 5;
 		atribuicaoOperacao(var,i,posicao,po,comandos,flag);
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.subtracao)){
 		var[posicao].setValor(Double.parseDouble(comandos[i+3]) - Double.parseDouble(comandos[i+4]));
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.multiplicacao)){
 		var[posicao].setValor(Double.parseDouble(comandos[i+3]) * Double.parseDouble(comandos[i+4]));
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.divisao)){
 		var[posicao].setValor(Double.parseDouble(comandos[i+3]) / Double.parseDouble(comandos[i+4]));
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 	    else if(comandos[i+2].equals(Operador.resto)){
 		var[posicao].setValor(Double.parseDouble(comandos[i+3]) + Double.parseDouble(comandos[i+4]));
+		Interpretador.linhaAtual++;
 		return 0;
 	    }
 
@@ -144,9 +194,11 @@ class Variavel{
 		var[posicao] = Variavel.existeVariavel(comandos[i+2],var,posicao);
 		if(var[posicao] != null){
 		    var[posicaoVar1].setValor(var[posicao].getValor());
+		    Interpretador.linhaAtual++;
 		}
 		else{
 		    var[posicaoVar1].setValor(Double.parseDouble(comandos[i+2]));
+		    Interpretador.linhaAtual++;
 		}
 	    }
 	    catch(Exception e){
