@@ -6,7 +6,7 @@
 
 
 
-=======
+
 </br></br>
 # Como usar a linguagem EG 
 <p>
