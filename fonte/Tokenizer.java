@@ -1,56 +1,75 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Iterator;
 import java.util.Stack;
-import java.uil.CharArray;
-import java.MaquinaEstado;
-import java.Token;
+import java.lang.Exception;
 
 class Tokenizer {
   private MaquinaEstado estado;
-  private Stack<char> pilhaCaracteres;
+  private Stack pilhaCaracteres;
 
   public Tokenizer() {
     this.estado = new MaquinaEstado();
-    this.pilhaCaracteres = new Stack();
+    this.pilhaCaracteres = new Stack<Character>();
   }
 
-  public void tokenizer(ArrayList<String> source) {
+  public List<List<Token>> tokenizer(List<String> source) throws Exception{
     Iterator it = source.iterator();
-
-    while(it.hasNext()) {
-      Token[] s = processar(it.next());
+    List<List<Token>> s = new ArrayList<List<Token>>();
+    int indiceLinha = 0;
+    try {
+      while(it.hasNext()) {
+        indiceLinha++;
+        String str = (String) it.next();
+        s.add(processar((String) str.replace("\n","")));
+      }
     }
+    catch(Exception e) {
+      throw new Exception("Erro na linha " + indiceLinha + e.getMessage() +"\nFalha na expressao \"" + source.get(--indiceLinha) + "\"");
+    }
+    return s;
   }
 
-  private Token[] processar(String instrucao) {
-    Token[] lista;
-    for(int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-      estado.transicao(s.charAt(i));
+  private List<Token> processar(String instrucao) throws Exception{
+    List<Token> lista = new ArrayList<Token>();
+    for(int i = 0; i < instrucao.length(); i++) {
+      char c = instrucao.charAt(i);
+      estado.transicao(c);
       if (estado.ehValido() && !estado.ehFinal()) {
-        this.pilhaCaracteres.push(c);
-        continue;
+        this.pilhaCaracteres.push((Character) c);
       }
       else if (estado.ehFinal()) {
-	  lista[0] = reconhecer(); //foi passado zero apenas para complilar
+        if(c == '"')
+          this.pilhaCaracteres.push((Character) c);
+        Token t = reconhecer();
+        if(t != null) {
+          lista.add(t);
+        }
+        if(!Character.isWhitespace(c) && c != '"') {
+          i--;
+        }
         this.estado.reset();
       }
-      else if (!estado.ehValido())
-        throw Exception(popAll() + " ?");
+      else if (!estado.ehValido()) {
+        throw new Exception(" coluna " + i);
+      }
     }
+    lista.add(reconhecer());
+    this.estado.reset();
+    return lista;
   }
 
   private Token reconhecer() {
     Token t = new Token();
     t.setConteudo(popAll());
     t.definirToken(this.estado.getEstadoFinal());
-    return t;
+    return t.getConteudo() != " " ? t : null;
   }
 
   private String popAll() {
-    char[] s = {};
+    StringBuilder s = new StringBuilder(this.pilhaCaracteres.size());
     while (!this.pilhaCaracteres.empty())
-      s[0] = this.pilhaCaracteres.pop(); //foi passado zero apenas para complilar
-    return new String(s); 
+      s.append((Character) this.pilhaCaracteres.pop());
+    return s.reverse().toString();
   }
 }

@@ -1,8 +1,10 @@
-private enum Estado {
-    Inicial,
-    Numerico,
-    Alfabetico,
-    Operador,
-    Invalido,
-    Final
+enum Estado {
+  Inicial,
+  Numerico,
+  Flutuante,
+  String,
+  Alfabetico,
+  Operador,
+  Invalido,
+  Final
 }
