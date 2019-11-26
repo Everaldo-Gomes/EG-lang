@@ -1,5 +1,9 @@
-Cria a 1
-Cria b 2
+Cria a 1 
+Cria b 22 
+Cria c 5 
 
+Soma a b 
+Atribui a Soma a 3 
 
+M>> a <<nome <<n a <<valor <<n <<M
 
