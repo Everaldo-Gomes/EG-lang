@@ -2,7 +2,6 @@
 
 # integrantes do grupo:
 Everaldo Pereira Gomes <br/>
-Geovano Lago Quatrin <br/>
 
 # Informações exigidas para o projeto:
 Implementar um programa em Java que interprete uma nova linguagem de programação.  O programa deve funcionar da seguinte forma pela linha de comando java NomePrograma arquivo.ext. Sendo que o parâmetro arquivo.ext será o arquivo a ser interpretado pelo programa, que pode ter qualquer nome e qualquer extensão. O interpretador deve ser capaz de analisar e reagir corretamente
